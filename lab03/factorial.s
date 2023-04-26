@@ -9,6 +9,8 @@ n: .word 8
 main:
     la t0, n
     lw a0, 0(t0)
+    lw t1, 0(t0)
+    addi t2, x0, 1
     jal ra, factorial
 
     addi a1, a0, 0
@@ -27,7 +29,9 @@ main:
 # The return value should be stored in a0
 factorial:
     # YOUR CODE HERE
-
+    addi t1, t1, -1
+    mul a0, a0, t1
+    bne t1, t2, factorial
     # This is how you return from a function. You'll learn more about this later.
     # This should be the last line in your program.
     jr ra

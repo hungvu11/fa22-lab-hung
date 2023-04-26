@@ -1,5 +1,5 @@
 .data
-n: .word 9
+n: .word 9 #global variable
 
 .text
 main:
